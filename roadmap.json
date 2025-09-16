@@ -4,29 +4,74 @@
       "module": "Planning and Design",
       "submodules": [
         {
-          "submodule_name": "Define Requirements",
+          "submodule_name": "Define Project Requirements",
           "tasks": [
-            "Identify calculator type (e.g., basic, scientific, graphing)",
-            "Determine target audience and platform (e.g., web, mobile, desktop)",
-            "Research existing calculators for inspiration"
+            "Identify target audience and use cases",
+            "Determine the scope of the weather data to be provided",
+            "Research existing weather APIs and their limitations"
           ],
-          "tools": [],
-          "dependencies": []
+          "tools": [
+            "Google Docs for documentation",
+            "MindMeister for mind mapping"
+          ]
         },
         {
           "submodule_name": "Create Wireframes and Mockups",
           "tasks": [
-            "Sketch out calculator layout and user interface",
-            "Create wireframes using Figma or Sketch",
-            "Design a visually appealing UI using CSS"
+            "Design a basic layout for the web app",
+            "Create wireframes for key pages (e.g. home, forecast, details)",
+            "Develop a visual design concept"
           ],
           "tools": [
-            "Figma",
-            "Sketch",
-            "CSS"
+            "Figma for UI design",
+            "Adobe XD for wireframing"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "Backend Development",
+      "submodules": [
+        {
+          "submodule_name": "Choose a Weather API",
+          "tasks": [
+            "Research and select a suitable weather API (e.g. OpenWeatherMap, Dark Sky)",
+            "Understand the API's terms of use and limitations"
+          ],
+          "tools": [
+            "OpenWeatherMap API",
+            "Dark Sky API"
+          ]
+        },
+        {
+          "submodule_name": "Set up API Server",
+          "tasks": [
+            "Create a new Node.js project",
+            "Install required dependencies (e.g. Express.js, Axios)",
+            "Set up API endpoints for weather data retrieval"
+          ],
+          "tools": [
+            "Node.js",
+            "Express.js",
+            "Axios"
           ],
           "dependencies": [
-            "Define Requirements"
+            "Choose a Weather API"
+          ]
+        },
+        {
+          "submodule_name": "Implement API Server Logic",
+          "tasks": [
+            "Write API endpoint handlers for weather data retrieval",
+            "Handle errors and edge cases",
+            "Implement caching or rate limiting (if necessary)"
+          ],
+          "tools": [
+            "JavaScript",
+            "Express.js"
+          ],
+          "dependencies": [
+            "Set up API Server"
           ]
         }
       ]
@@ -35,33 +80,46 @@
       "module": "Frontend Development",
       "submodules": [
         {
-          "submodule_name": "Build Calculator UI",
+          "submodule_name": "Set up React App",
           "tasks": [
-            "Write HTML for calculator structure",
-            "Style calculator using CSS",
-            "Add interactive elements using JavaScript"
+            "Create a new React project using create-react-app",
+            "Install required dependencies (e.g. React Router, Axios)"
           ],
           "tools": [
-            "HTML",
-            "CSS",
-            "JavaScript"
-          ],
-          "dependencies": [
-            "Create Wireframes and Mockups"
+            "create-react-app",
+            "React Router",
+            "Axios"
           ]
         },
         {
-          "submodule_name": "Implement Calculator Logic",
+          "submodule_name": "Implement React Components",
           "tasks": [
-            "Write JavaScript functions for calculations",
-            "Handle user input and output",
-            "Implement error handling and edge cases"
+            "Create React components for key pages (e.g. home, forecast, details)",
+            "Implement component logic and API calls",
+            "Use a state management library (e.g. Redux, MobX)"
           ],
           "tools": [
+            "React",
+            "JavaScript",
+            "Redux"
+          ],
+          "dependencies": [
+            "Set up React App"
+          ]
+        },
+        {
+          "submodule_name": "Integrate with API Server",
+          "tasks": [
+            "Make API calls to retrieve weather data",
+            "Handle errors and edge cases",
+            "Implement loading and error states"
+          ],
+          "tools": [
+            "Axios",
             "JavaScript"
           ],
           "dependencies": [
-            "Build Calculator UI"
+            "Implement API Server Logic"
           ]
         }
       ]
@@ -70,34 +128,29 @@
       "module": "Testing and Deployment",
       "submodules": [
         {
-          "submodule_name": "Test Calculator Functionality",
+          "submodule_name": "Write Unit Tests and Integration Tests",
           "tasks": [
-            "Write unit tests for calculator logic",
-            "Perform integration testing",
-            "Test calculator on different platforms and browsers"
+            "Write unit tests for React components",
+            "Write integration tests for API endpoints"
           ],
           "tools": [
             "Jest",
-            "Cypress"
-          ],
-          "dependencies": [
-            "Implement Calculator Logic"
+            "Enzyme"
           ]
         },
         {
-          "submodule_name": "Deploy Calculator",
+          "submodule_name": "Deploy to Production",
           "tasks": [
-            "Host calculator on a server or platform (e.g., GitHub Pages, Netlify)",
-            "Configure analytics and monitoring tools",
-            "Set up continuous integration and deployment"
+            "Build and deploy the React app to a hosting platform (e.g. Vercel, Netlify)",
+            "Configure environment variables and API keys"
           ],
           "tools": [
-            "GitHub Pages",
-            "Netlify",
-            "Google Analytics"
+            "Vercel",
+            "Netlify"
           ],
           "dependencies": [
-            "Test Calculator Functionality"
+            "Implement React Components",
+            "Implement API Server Logic"
           ]
         }
       ]
